@@ -11,7 +11,8 @@ from models.CN_DSECN import CNZSLModel
 def get_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('--train_dataset',type=str,default='SUN')
-    parser.add_argument('--use_DSECN',action='store_true',default=True)
+    # parser.add_argument('--use_DSECN',action='store_true',default=True)
+    parser.add_argument('--use_DSECN', action='store_true', default=False)
     parser.add_argument('--att_type',type=str,default='w2v')
     args = parser.parse_args()
     return args

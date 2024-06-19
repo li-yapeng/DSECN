@@ -1,5 +1,5 @@
 import os
-# os.environ['CUDA_VISIBLE_DEVICES']='5'
+# os.environ['CUDA_VISIBLE_DEVICES']='6'
 import sys
 import argparse
 import torch
@@ -14,15 +14,15 @@ from data_utils.CrossDataset import GetCrossDataset
 
 def get_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--seed',type=int,default=10) #CUB-w2v:10 ,AWA2:58, SUN:58
-    # parser.add_argument('--att_type',type=str,default='clip')
-    parser.add_argument('--att_type', type=str, default='w2v')
-    parser.add_argument('--train_dataset',type=str,default='CUB')
+    parser.add_argument('--seed',type=int,default=58) #CUB-w2v:10 ,AWA2:58, SUN:58
+    parser.add_argument('--att_type',type=str,default='clip')
+    # parser.add_argument('--att_type', type=str, default='w2v')
+    parser.add_argument('--train_dataset',type=str,default='SUN')
     parser.add_argument('--ECN_type', type=str, default='1k')
     parser.add_argument('--use_data',action='store_true',default=True)
-    parser.add_argument('--use_DSE', action='store_true', default=True)
+    # parser.add_argument('--use_DSE', action='store_true', default=True)
     # parser.add_argument('--use_HTE', action='store_true', default=True)
-    # parser.add_argument('--use_DSE', action='store_true', default=False)
+    parser.add_argument('--use_DSE', action='store_true', default=False)
     parser.add_argument('--use_HTE', action='store_true', default=False)
     args = parser.parse_args()
     return args
@@ -96,7 +96,7 @@ def train(args):
             optim.step()
 
 
-    print(f'Training is done! Took time: {(time() - start_time): .1f} seconds')
+    # print(f'Training is done! Took time: {(time() - start_time): .1f} seconds')
 
 
     attrs = T_attrs
@@ -275,9 +275,4 @@ if __name__ == "__main__":
 
     model = train(args)
     zsl, gzsl = evaluate(model,args)
-    if gzsl > best_gzsl:
-        best_gzsl = gzsl
-        best_zsl = zsl
-        best_seed = seed
-    print("best seed:{}|best gzsl:{}|best zsl:{}".format(best_seed, best_gzsl, best_zsl))
-    metric_list.append({"seed:{}|zsl:{}|gzsl:{}".format(seed, zsl, gzsl)})
+

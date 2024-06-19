@@ -7,7 +7,6 @@ from torch import nn
 
 class DSECN(nn.Module):
     def __init__(self, attr_dim: int, hid_dim: int, proto_dim: int, dropout_rate=0.3, args=None,DSE_weight=None,HTE_weight=None):
-        # sun:dropout_rate=0; AWA2,CUB:dropout_rate=0.3
         super().__init__()
 
         self.use_data, self.use_DSE, self.use_HTE = args.use_data,args.use_DSE,args.use_HTE
@@ -35,7 +34,7 @@ class DSECN(nn.Module):
 
         resnet = models.resnet101()
         num_ftrs = resnet.fc.in_features
-        resnet_path = "/mnt/ssd/liyapeng/research/GZSL/code/APN-ZSL/pretrained_models/resnet101-5d3b4d8f.pth"
+        resnet_path = "./pretrained_models/resnet101-5d3b4d8f.pth"
         num_fc = 1000
         resnet.fc = nn.Linear(num_ftrs, num_fc)
 
@@ -87,7 +86,7 @@ class DSECN(nn.Module):
             self.weight_HTE = weight_HTE
         else:
             self.weight_HTE = HTE_weight
-        print('weight_DSE:{}|weight_HTE:{}'.format(self.weight_DSE, self.weight_HTE))
+
 
     def train_loss(self, attrs_seen, feats, targets, clip_1k, label_1k, clip_hypo, label_hypo):
         # use_data, use_1k, use_hypo = True, True, True

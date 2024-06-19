@@ -83,7 +83,7 @@ class CNZSLModel(nn.Module):
         if USE_DSECN:
             resnet = models.resnet101()
             num_ftrs = resnet.fc.in_features
-            resnet_path = "/mnt/ssd/liyapeng/research/GZSL/code/APN-ZSL/pretrained_models/resnet101-5d3b4d8f.pth"
+            resnet_path = "./pretrained_models/resnet101-5d3b4d8f.pth"
             num_fc = 1000
             resnet.fc = nn.Linear(num_ftrs, num_fc)
 
@@ -114,8 +114,6 @@ class CNZSLModel(nn.Module):
 
         total_loss = 0
         if self.dataset=='CUB':
-            # weight_DSE = 1
-            # weight_HTE = 1
             weight_DSE = 10
             weight_HTE = 0.01
         elif self.dataset == 'AWA2':
