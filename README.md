@@ -34,7 +34,8 @@ conda env create -f environment.yml
 
 ### Data Preparation
 
-The dataset can download [here (Google Drive)](https://drive.google.com/drive/folders/1heYi9oX3LoBbDYlE8ip4d18nNp3r7Caf?usp=sharing).
+The dataset can download [Google Drive](https://drive.google.com/uc?id=1Gy3dvusCumvTcQ4uUg9W1EkWrkNca6Ak) and [BaiduNetdisk](https://pan.baidu.com/s/1fyKRMxUqCW8UKhxGyCxzjw?pwd=zjoo).
+
 
 ```
 data
