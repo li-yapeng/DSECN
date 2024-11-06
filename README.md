@@ -25,12 +25,6 @@ This is achieved by introducing diverse semantics from external class names and 
 - **Plug-and-Play:** The idea of DSECN can be **easily integrated into other GZSL methods, enhancing their robustness** for dissimilar unseen classes.
 - **Evaluation Pipeline:** A **cross-dataset evaluation pipeline** designed to comprehensively assess the performance of existing GZSL methods across similar, dissimilar, and practical settings.
 
-
-#### 🌟With this project, you can get:
-- *\[Researcher\]*: A large amount of research directions for further improvement.
-
-
-
 ## 🚀 Getting Started
 
 ### Installation
@@ -41,7 +35,7 @@ conda env create -f environment.yml
 
 ### Data Preparation
 
-The dataset can download [here (Google Drive)](https://drive.google.com/drive/folders/1heYi9oX3LoBbDYlE8ip4d18nNp3r7Caf?usp=sharing):
+The dataset can download [Google Drive](https://drive.google.com/uc?id=1Gy3dvusCumvTcQ4uUg9W1EkWrkNca6Ak) and [Baidu Netdisk](https://pan.baidu.com/s/1fyKRMxUqCW8UKhxGyCxzjw?pwd=zjoo):
 
 ```
 data
